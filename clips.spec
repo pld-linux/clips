@@ -5,8 +5,6 @@ Version:	6.1
 Release:	2
 License:	GPL
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Source0:	http://www.ghgcorp.com/clips/download/other/%{name}6.tgz
 Source1:	3CCP.pdf
 Source2:	abstract.pdf
@@ -38,8 +36,6 @@ firm.
 Summary:	CLIPS documentation
 Summary(pl):	Dokumentacja do CLIPS
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 
 %description doc
 CLIPS documentation.
