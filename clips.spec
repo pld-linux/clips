@@ -6,14 +6,23 @@ Release:	1
 License:	Public Domain
 Group:		Development/Languages
 Source0:	http://www.ghg.net/clips/download/source/clipssrc.tar.Z
+# Source0-md5:	de2bddd67d3f82f23fb6c1bef051b544
 Source1:	http://www.ghg.net/clips/download/documentation/3CCP.pdf
+# Source1-md5:	a6a60733af08f9e9e6d0928272ad4dd9
 Source2:	http://www.ghg.net/clips/download/documentation/abstract.pdf
+# Source2-md5:	cd3ecddc4e538b8af0e5cf08ab7fd89c
 Source3:	http://www.ghg.net/clips/download/documentation/apg.pdf
+# Source3-md5:	77a051086c3be543f507e8b1f77f7077
 Source4:	http://www.ghg.net/clips/download/documentation/arch5-1.pdf
+# Source4-md5:	9a13d2ed18fe6ab67902d5bce29957cb
 Source5:	http://www.ghg.net/clips/download/documentation/bpg.pdf
+# Source5-md5:	15190fdc0895356ab347e1dd41bb6aa7
 Source6:	http://www.ghg.net/clips/download/documentation/ig.pdf
+# Source6-md5:	ab5d7fb340c3be4dc533831dc7d8f1b5
 Source7:	http://www.ghg.net/clips/download/documentation/usrguide.pdf
+# Source7-md5:	f2da81e30713f24d8b94c2822fc7704a
 Source8:	http://www.ghg.net/clips/download/source/%{name}.hlp
+# Source8-md5:	e6429bcd668b085038179cf54764436a
 # from http://www.ghg.net/clips/download/executables/examples/
 Source9:	%{name}-examples-%{version}.tar.gz
 Patch0:		%{name}-automake.patch
