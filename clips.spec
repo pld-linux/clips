@@ -81,7 +81,7 @@ tar zxf %{SOURCE9}
 
 %build
 cd clipssrc
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 autoheader
 %{__autoconf}
