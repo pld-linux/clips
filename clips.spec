@@ -84,7 +84,7 @@ cd clipssrc
 libtoolize --copy --force
 aclocal
 autoheader
-autoconf
+%{__autoconf}
 automake -a -c
 
 echo '#undef HELP_DEFAULT' > usrsetup.h
