@@ -2,7 +2,7 @@ Summary:	CLIPS - a productive development and delivery expert system tool
 Summary(pl):	CLIPS - narzêdzie do tworzenia i wdra¿ania systemów eksperckich
 Name:		clips
 Version:	6.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
@@ -51,7 +51,7 @@ Dokumentacja do CLIPS.
 %setup -q -n %{name}%{version}
 
 %build
-%configure 
+%configure2_13
 %{__make} 
 
 %install
