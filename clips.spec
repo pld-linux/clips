@@ -19,6 +19,7 @@ Source9:	%{name}-examples-%{version}.tar.gz
 Patch0:		%{name}-automake.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
 URL:		http://www.ghg.net/clips/CLIPS.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -80,10 +81,11 @@ tar zxf %{SOURCE9}
 
 %build
 cd clipssrc
+libtoolize --copy --force
 aclocal
 autoheader
-automake -a -c
 autoconf
+automake -a -c
 
 echo '#undef HELP_DEFAULT' > usrsetup.h
 echo '#define HELP_DEFAULT "%{_datadir}/misc/%{name}.hlp"' >> usrsetup.h
