@@ -48,7 +48,7 @@ Dokumentacja do CLIPS.
 
 %build
 %configure2_13
-%{__make} 
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
