@@ -81,11 +81,12 @@ tar zxf %{SOURCE9}
 
 %build
 cd clipssrc
+rm -f missing
 %{__libtoolize}
-aclocal
-autoheader
+%{__aclocal}
+%{__autoheader}
 %{__autoconf}
-automake -a -c
+%{__automake}
 
 echo '#undef HELP_DEFAULT' > usrsetup.h
 echo '#define HELP_DEFAULT "%{_datadir}/misc/%{name}.hlp"' >> usrsetup.h
@@ -95,18 +96,18 @@ echo '#define HELP_DEFAULT "%{_datadir}/misc/%{name}.hlp"' >> usrsetup.h
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_datadir}/misc,%{_examplesdir}/%{name}-%{version}}
 
 %{__make} -C clipssrc DESTDIR=$RPM_BUILD_ROOT install
 
 install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} \
 	%{SOURCE6} %{SOURCE7} .
 
-install -d $RPM_BUILD_ROOT%{_datadir}/misc/
 install %{SOURCE8} $RPM_BUILD_ROOT%{_datadir}/misc/%{name}.hlp
 
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -r examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-gzip -9nf < readme.txt > COPYING.gz
+
+mv readme.txt COPYING
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -116,7 +117,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc COPYING
 %attr(755,root,root) %{_bindir}/clips
 %attr(755,root,root) %{_libdir}/libclips.so.*.*.*
 %{_datadir}/misc/%{name}.hlp
