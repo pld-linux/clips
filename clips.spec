@@ -41,14 +41,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
-install -d $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}
-install %{SOURCE1} $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}
-install %{SOURCE2} $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}
-install %{SOURCE3} $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}  
-install %{SOURCE4} $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}  
-install %{SOURCE5} $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}  
-install %{SOURCE6} $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}  
-install %{SOURCE7} $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}  
+install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} \
+	%{SOURCE6} %{SOURCE7} .
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,10 +57,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files doc
 %defattr(644,root,root,755)
-%{_docdir}/%{name}-%{version}/3CCP.pdf
-%{_docdir}/%{name}-%{version}/abstract.pdf
-%{_docdir}/%{name}-%{version}/apg.pdf
-%{_docdir}/%{name}-%{version}/arch5-1.pdf
-%{_docdir}/%{name}-%{version}/bpg.pdf
-%{_docdir}/%{name}-%{version}/ig.pdf
-%{_docdir}/%{name}-%{version}/usrguide.pdf
+%doc 3CCP.pdf abstract.pdf apg.pdf arch5-1.pdf bpg.pdf
+%doc ig.pdf usrguide.pdf
