@@ -80,7 +80,7 @@ Group:		Development/Languages
 Static libraries for programs using embadded CLIPS enviroment.
 
 %description devel -l pl
-Statyczne biblioteki dla programów u¿ywaj±cych wbudowanego ¶rodowiska 
+Statyczne biblioteki dla programów u¿ywaj±cych wbudowanego ¶rodowiska
 CLIPSa.
 
 %prep
