@@ -27,10 +27,10 @@ Source8:	http://www.ghg.net/clips/download/source/%{name}.hlp
 Source9:	%{name}-examples-%{version}.tar.gz
 # Source9-md5:	83dfad948a07267487661973435d72e9
 Patch0:		%{name}-automake.patch
+URL:		http://www.ghg.net/clips/CLIPS.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-URL:		http://www.ghg.net/clips/CLIPS.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -108,7 +108,8 @@ echo '#define HELP_DEFAULT "%{_datadir}/misc/%{name}.hlp"' >> usrsetup.h
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_datadir}/misc,%{_examplesdir}/%{name}-%{version}}
 
-%{__make} -C clipssrc DESTDIR=$RPM_BUILD_ROOT install
+%{__make} -C clipssrc install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} \
 	%{SOURCE6} %{SOURCE7} .
