@@ -25,6 +25,7 @@ Source8:	http://www.ghg.net/clips/download/source/%{name}.hlp
 # Source8-md5:	e6429bcd668b085038179cf54764436a
 # from http://www.ghg.net/clips/download/executables/examples/
 Source9:	%{name}-examples-%{version}.tar.gz
+# Source9-md5:	83dfad948a07267487661973435d72e9
 Patch0:		%{name}-automake.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
