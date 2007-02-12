@@ -1,5 +1,5 @@
 Summary:	CLIPS - a productive development and delivery expert system tool
-Summary(pl):	CLIPS - narz阣zie do tworzenia i wdra縜nia system體 eksperckich
+Summary(pl.UTF-8):   CLIPS - narz臋dzie do tworzenia i wdra偶ania system贸w eksperckich
 Name:		clips
 Version:	6.2
 Release:	1
@@ -41,46 +41,46 @@ users throughout the public and private community including: all NASA
 sites and branches of the military, numerous federal bureaus,
 government contractors, universities, and many companies.
 
-%description -l pl
-CLIPS jest narz阣ziem do tworzenia i wdra縜nia system體 eksperckich
-zapewniaj眂ym kompletne 秗odowisko do tworzenia system體 eksperckich
-opartych na regu砤ch lub obiektach. CLIPS jest u縴wany przez wielu
-u縴tkownik體 prywatnych i publicznych, tym: NASA i r罂ne ga酬zie
-wojska, biura federalne, kontrahent體 rz眃owych, uniwersytety i wiele
+%description -l pl.UTF-8
+CLIPS jest narz臋dziem do tworzenia i wdra偶ania system贸w eksperckich
+zapewniaj膮cym kompletne 艣rodowisko do tworzenia system贸w eksperckich
+opartych na regu艂ach lub obiektach. CLIPS jest u偶ywany przez wielu
+u偶ytkownik贸w prywatnych i publicznych, tym: NASA i r贸偶ne ga艂臋zie
+wojska, biura federalne, kontrahent贸w rz膮dowych, uniwersytety i wiele
 firm.
 
 %package doc
 Summary:	CLIPS documentation
-Summary(pl):	Dokumentacja do CLIPS
+Summary(pl.UTF-8):   Dokumentacja do CLIPS
 Group:		Development/Languages
 
 %description doc
 CLIPS documentation and examples.
 
-%description doc -l pl
-Dokumentacja i przyk砤dy do CLIPSa.
+%description doc -l pl.UTF-8
+Dokumentacja i przyk艂ady do CLIPSa.
 
 %package devel
 Summary:	CLIPS development files
-Summary(pl):	Nag丑wki do CLIPSa
+Summary(pl.UTF-8):   Nag艂贸wki do CLIPSa
 Group:		Development/Languages
 
 %description devel
 Includes for programs using embadded CLIPS enviroment.
 
-%description devel -l pl
-Pliki nag丑wkowe dla program體 u縴waj眂ych wbudowanego 秗odowiska CLIPSa.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe dla program贸w u偶ywaj膮cych wbudowanego 艣rodowiska CLIPSa.
 
 %package static
 Summary:	CLIPS static libraries
-Summary(pl):	Statyczne biblioteki do CLIPSa
+Summary(pl.UTF-8):   Statyczne biblioteki do CLIPSa
 Group:		Development/Languages
 
 %description static
 Static libraries for programs using embadded CLIPS enviroment.
 
-%description static -l pl
-Statyczne biblioteki dla program體 u縴waj眂ych wbudowanego 秗odowiska
+%description static -l pl.UTF-8
+Statyczne biblioteki dla program贸w u偶ywaj膮cych wbudowanego 艣rodowiska
 CLIPSa.
 
 %prep
