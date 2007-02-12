@@ -1,5 +1,5 @@
 Summary:	CLIPS - a productive development and delivery expert system tool
-Summary(pl.UTF-8):   CLIPS - narzędzie do tworzenia i wdrażania systemów eksperckich
+Summary(pl.UTF-8):	CLIPS - narzędzie do tworzenia i wdrażania systemów eksperckich
 Name:		clips
 Version:	6.2
 Release:	1
@@ -51,7 +51,7 @@ firm.
 
 %package doc
 Summary:	CLIPS documentation
-Summary(pl.UTF-8):   Dokumentacja do CLIPS
+Summary(pl.UTF-8):	Dokumentacja do CLIPS
 Group:		Development/Languages
 
 %description doc
@@ -62,7 +62,7 @@ Dokumentacja i przykłady do CLIPSa.
 
 %package devel
 Summary:	CLIPS development files
-Summary(pl.UTF-8):   Nagłówki do CLIPSa
+Summary(pl.UTF-8):	Nagłówki do CLIPSa
 Group:		Development/Languages
 
 %description devel
@@ -73,7 +73,7 @@ Pliki nagłówkowe dla programów używających wbudowanego środowiska CLIPSa.
 
 %package static
 Summary:	CLIPS static libraries
-Summary(pl.UTF-8):   Statyczne biblioteki do CLIPSa
+Summary(pl.UTF-8):	Statyczne biblioteki do CLIPSa
 Group:		Development/Languages
 
 %description static
