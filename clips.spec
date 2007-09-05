@@ -2,7 +2,7 @@ Summary:	CLIPS - a productive development and delivery expert system tool
 Summary(pl.UTF-8):	CLIPS - narzędzie do tworzenia i wdrażania systemów eksperckich
 Name:		clips
 Version:	6.2
-Release:	2
+Release:	3
 License:	Public Domain
 Group:		Development/Languages
 Source0:	http://www.ghg.net/clips/download/source/clipssrc.tar.Z
@@ -27,6 +27,7 @@ Source8:	http://www.ghg.net/clips/download/source/%{name}.hlp
 Source9:	%{name}-examples-%{version}.tar.gz
 # Source9-md5:	83dfad948a07267487661973435d72e9
 Patch0:		%{name}-automake.patch
+Patch1:		%{name}-as-needed.patch
 URL:		http://www.ghg.net/clips/CLIPS.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -88,6 +89,7 @@ CLIPSa.
 tar zxf %{SOURCE0}
 %patch0 -p0
 tar zxf %{SOURCE9}
+%patch1 -p1
 
 %build
 cd clipssrc
