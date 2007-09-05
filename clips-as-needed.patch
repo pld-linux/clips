@@ -1,0 +1,10 @@
+--- clips-6.2/clipssrc/Makefile.am~	2007-09-05 16:59:53.000000000 +0200
++++ clips-6.2/clipssrc/Makefile.am	2007-09-05 17:00:54.000000000 +0200
+@@ -2,6 +2,7 @@
+ bin_PROGRAMS = clips
+ 
+ libclips_la_LDFLAGS =  -version-info 6:2:0
++libclips_la_LIBADD =  -lm
+ 
+ pkginclude_HEADERS = \
+ 	agenda.h analysis.h argacces.h bload.h bmathfun.h bsave.h \
