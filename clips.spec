@@ -1,33 +1,31 @@
 Summary:	CLIPS - a productive development and delivery expert system tool
 Summary(pl.UTF-8):	CLIPS - narzędzie do tworzenia i wdrażania systemów eksperckich
 Name:		clips
-Version:	6.2
-Release:	3
+Version:	6.24
+Release:	1
 License:	Public Domain
 Group:		Development/Languages
 Source0:	http://www.ghg.net/clips/download/source/clipssrc.tar.Z
-# Source0-md5:	de2bddd67d3f82f23fb6c1bef051b544
+# Source0-md5:	ccba9d912375e57a1b7d9eba12da4198
 Source1:	http://www.ghg.net/clips/download/documentation/3CCP.pdf
 # Source1-md5:	a6a60733af08f9e9e6d0928272ad4dd9
 Source2:	http://www.ghg.net/clips/download/documentation/abstract.pdf
 # Source2-md5:	cd3ecddc4e538b8af0e5cf08ab7fd89c
 Source3:	http://www.ghg.net/clips/download/documentation/apg.pdf
-# Source3-md5:	77a051086c3be543f507e8b1f77f7077
+# Source3-md5:	fae2267d96fb95603345e91c9990caaa
 Source4:	http://www.ghg.net/clips/download/documentation/arch5-1.pdf
 # Source4-md5:	9a13d2ed18fe6ab67902d5bce29957cb
 Source5:	http://www.ghg.net/clips/download/documentation/bpg.pdf
-# Source5-md5:	15190fdc0895356ab347e1dd41bb6aa7
+# Source5-md5:	63891971aa782dc67c2de0579647247e
 Source6:	http://www.ghg.net/clips/download/documentation/ig.pdf
-# Source6-md5:	ab5d7fb340c3be4dc533831dc7d8f1b5
+# Source6-md5:	89beca5caa08b30d8285cca7f1df1d26
 Source7:	http://www.ghg.net/clips/download/documentation/usrguide.pdf
-# Source7-md5:	f2da81e30713f24d8b94c2822fc7704a
+# Source7-md5:	44e54697a8acf3509bc4ca51d88b65bd
 Source8:	http://www.ghg.net/clips/download/source/%{name}.hlp
-# Source8-md5:	e6429bcd668b085038179cf54764436a
-# from http://www.ghg.net/clips/download/executables/examples/
-Source9:	%{name}-examples-%{version}.tar.gz
-# Source9-md5:	83dfad948a07267487661973435d72e9
+# Source8-md5:	55f662f8aa8400aff8bf5a5cb882f708
+Source9:	http://www.ghg.net/clips/download/executables/examples/AllExamples.tar.Z
+# Source9-md5:	f5c02b997199f3ede779b8502af2ba09
 Patch0:		%{name}-automake.patch
-Patch1:		%{name}-as-needed.patch
 URL:		http://www.ghg.net/clips/CLIPS.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -85,14 +83,11 @@ Statyczne biblioteki dla programów używających wbudowanego środowiska
 CLIPSa.
 
 %prep
-%setup -q -T -c
-tar zxf %{SOURCE0}
+%setup -q -T -c -a0 -a9
 %patch0 -p0
-tar zxf %{SOURCE9}
-%patch1 -p1
 
 %build
-cd clipssrc
+cd clipssrc/clipssrc/
 rm -f missing
 %{__libtoolize}
 %{__aclocal}
@@ -110,7 +105,7 @@ echo '#define HELP_DEFAULT "%{_datadir}/misc/%{name}.hlp"' >> usrsetup.h
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_datadir}/misc,%{_examplesdir}/%{name}-%{version}}
 
-%{__make} -C clipssrc install \
+%{__make} -C clipssrc/clipssrc install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} \
@@ -118,9 +113,9 @@ install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} \
 
 install %{SOURCE8} $RPM_BUILD_ROOT%{_datadir}/misc/%{name}.hlp
 
-cp -r examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -r Examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-mv readme.txt COPYING
+cp -f clipssrc/readme.txt COPYING
 
 %clean
 rm -rf $RPM_BUILD_ROOT

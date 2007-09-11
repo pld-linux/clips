@@ -1,21 +1,22 @@
-diff -urN clipssrc/AUTHORS clipssrc--/AUTHORS
---- clipssrc/AUTHORS	Thu Jan  1 01:00:00 1970
-+++ clipssrc--/AUTHORS	Tue Apr  9 20:38:10 2002
+diff -urN clipssrc/clipssrc/AUTHORS clipssrc/clipssrc--/AUTHORS
+--- clipssrc/clipssrc/AUTHORS	Thu Jan  1 01:00:00 1970
++++ clipssrc/clipssrc--/AUTHORS	Tue Apr  9 20:38:10 2002
 @@ -0,0 +1 @@
 +dummy
-diff -urN clipssrc/ChangeLog clipssrc--/ChangeLog
---- clipssrc/ChangeLog	Thu Jan  1 01:00:00 1970
-+++ clipssrc--/ChangeLog	Tue Apr  9 20:38:06 2002
+diff -urN clipssrc/clipssrc/ChangeLog clipssrc/clipssrc--/ChangeLog
+--- clipssrc/clipssrc/ChangeLog	Thu Jan  1 01:00:00 1970
++++ clipssrc/clipssrc--/ChangeLog	Tue Apr  9 20:38:06 2002
 @@ -0,0 +1 @@
 +foo
-diff -urN clipssrc/Makefile.am clipssrc--/Makefile.am
---- clipssrc/Makefile.am	Thu Jan  1 01:00:00 1970
-+++ clipssrc--/Makefile.am	Tue Apr  9 20:37:46 2002
-@@ -0,0 +1,77 @@
+diff -urN clipssrc/clipssrc/Makefile.am clipssrc/clipssrc--/Makefile.am
+--- clipssrc/clipssrc/Makefile.am	Thu Jan  1 01:00:00 1970
++++ clipssrc/clipssrc--/Makefile.am	Tue Apr  9 20:37:46 2002
+@@ -0,0 +1,78 @@
 +lib_LTLIBRARIES = libclips.la
 +bin_PROGRAMS = clips
 +
-+libclips_la_LDFLAGS =  -version-info 6:2:0
++libclips_la_LDFLAGS =  -version-info 6:24:0
++libclips_la_LIBADD =  -lm
 +
 +pkginclude_HEADERS = \
 +	agenda.h analysis.h argacces.h bload.h bmathfun.h bsave.h \
@@ -31,7 +32,7 @@ diff -urN clipssrc/Makefile.am clipssrc--/Makefile.am
 +	evaluatn.h expressn.h exprnbin.h exprnops.h exprnpsr.h \
 +	extnfunc.h factbin.h factbld.h factcmp.h factcom.h \
 +	factfun.h factgen.h facthsh.h factlhs.h factmch.h \
-+	factmngr.h factprt.h factrete.h factrhs.h filecom.h \
++	factmngr.h factprt.h factqpsr.h factqury.h factrete.h factrhs.h filecom.h \
 +	filertr.h generate.h genrcbin.h genrccmp.h genrccom.h \
 +	genrcexe.h genrcfun.h genrcpsr.h globlbin.h globlbsc.h \
 +	globlcmp.h globlcom.h globldef.h globlpsr.h immthpsr.h \
@@ -46,7 +47,7 @@ diff -urN clipssrc/Makefile.am clipssrc--/Makefile.am
 +	prdctfun.h prntutil.h proflfun.h reorder.h reteutil.h \
 +	retract.h router.h rulebin.h rulebld.h rulebsc.h \
 +	rulecmp.h rulecom.h rulecstr.h ruledef.h ruledlt.h \
-+	rulelhs.h rulepsr.h scanner.h setup.h shrtlnkn.h sortfun.h \
++	rulelhs.h rulepsr.h scanner.h setup.h sortfun.h \
 +	strngfun.h strngrtr.h symblbin.h symblcmp.h symbol.h \
 +	sysdep.h textpro.h tmpltbin.h tmpltbsc.h tmpltcmp.h \
 +	tmpltdef.h tmpltfun.h tmpltlhs.h tmpltpsr.h tmpltrhs.h \
@@ -66,7 +67,7 @@ diff -urN clipssrc/Makefile.am clipssrc--/Makefile.am
 +	expressn.c exprnbin.c exprnops.c exprnpsr.c extnfunc.c \
 +	factbin.c factbld.c factcmp.c factcom.c factfun.c \
 +	factgen.c facthsh.c factlhs.c factmch.c factmngr.c \
-+	factprt.c factrete.c factrhs.c filecom.c filertr.c \
++	factprt.c factqpsr.c factqury.c factrete.c factrhs.c filecom.c filertr.c \
 +	generate.c genrcbin.c genrccmp.c genrccom.c genrcexe.c \
 +	genrcfun.c genrcpsr.c globlbin.c globlbsc.c globlcmp.c \
 +	globlcom.c globldef.c globlpsr.c immthpsr.c incrrset.c \
@@ -85,27 +86,27 @@ diff -urN clipssrc/Makefile.am clipssrc--/Makefile.am
 +	strngrtr.c symblbin.c symblcmp.c symbol.c sysdep.c \
 +	textpro.c tmpltbin.c tmpltbsc.c tmpltcmp.c tmpltdef.c \
 +	tmpltfun.c tmpltlhs.c tmpltpsr.c tmpltrhs.c tmpltutl.c \
-+	userdata.c utility.c watch.c
++	userdata.c userfunctions.c utility.c watch.c
 +
 +clips_SOURCES = main.c
 +clips_LDADD = -lclips -lm
-diff -urN clipssrc/NEWS clipssrc--/NEWS
---- clipssrc/NEWS	Thu Jan  1 01:00:00 1970
-+++ clipssrc--/NEWS	Tue Apr  9 20:37:58 2002
+diff -urN clipssrc/clipssrc/NEWS clipssrc/clipssrc--/NEWS
+--- clipssrc/clipssrc/NEWS	Thu Jan  1 01:00:00 1970
++++ clipssrc/clipssrc--/NEWS	Tue Apr  9 20:37:58 2002
 @@ -0,0 +1 @@
 +foobar
-diff -urN clipssrc/README clipssrc--/README
---- clipssrc/README	Thu Jan  1 01:00:00 1970
-+++ clipssrc--/README	Tue Apr  9 20:38:01 2002
+diff -urN clipssrc/clipssrc/README clipssrc/clipssrc--/README
+--- clipssrc/clipssrc/README	Thu Jan  1 01:00:00 1970
++++ clipssrc/clipssrc--/README	Tue Apr  9 20:38:01 2002
 @@ -0,0 +1 @@
 +foobarbaz
-diff -urN clipssrc/configure.ac clipssrc--/configure.ac
---- clipssrc/configure.ac	Thu Jan  1 01:00:00 1970
-+++ clipssrc--/configure.ac	Tue Apr  9 20:37:46 2002
+diff -urN clipssrc/clipssrc/configure.ac clipssrc/clipssrc--/configure.ac
+--- clipssrc/clipssrc/configure.ac	Thu Jan  1 01:00:00 1970
++++ clipssrc/clipssrc--/configure.ac	Tue Apr  9 20:37:46 2002
 @@ -0,0 +1,27 @@
 +# Process this file with autoconf to produce a configure script.
-+AC_INIT(clips, 6.2)
-+AM_INIT_AUTOMAKE(clips, 6.2)
++AC_INIT(clips, 6.24)
++AM_INIT_AUTOMAKE(clips, 6.24)
 +AC_CONFIG_SRCDIR([agenda.c])
 +AM_CONFIG_HEADER([config.h])
 +
