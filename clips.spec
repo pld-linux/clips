@@ -2,7 +2,7 @@ Summary:	CLIPS - a productive development and delivery expert system tool
 Summary(pl.UTF-8):	CLIPS - narzędzie do tworzenia i wdrażania systemów eksperckich
 Name:		clips
 Version:	6.26
-Release:	1
+Release:	2
 License:	Public Domain
 Group:		Development/Languages
 Source0:	http://www.ghg.net/clips/download/source/clipssrc.tar.Z
@@ -52,6 +52,7 @@ firm.
 Summary:	CLIPS documentation
 Summary(pl.UTF-8):	Dokumentacja do CLIPS
 Group:		Development/Languages
+Requires:	%{name} = %{version}-%{release}
 
 %description doc
 CLIPS documentation and examples.
@@ -63,6 +64,7 @@ Dokumentacja i przykłady do CLIPSa.
 Summary:	CLIPS development files
 Summary(pl.UTF-8):	Nagłówki do CLIPSa
 Group:		Development/Languages
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Includes for programs using embadded CLIPS enviroment.
@@ -74,6 +76,7 @@ Pliki nagłówkowe dla programów używających wbudowanego środowiska CLIPSa.
 Summary:	CLIPS static libraries
 Summary(pl.UTF-8):	Statyczne biblioteki do CLIPSa
 Group:		Development/Languages
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libraries for programs using embadded CLIPS enviroment.
