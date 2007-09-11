@@ -15,7 +15,7 @@ diff -urN clipssrc/clipssrc/Makefile.am clipssrc/clipssrc--/Makefile.am
 +lib_LTLIBRARIES = libclips.la
 +bin_PROGRAMS = clips
 +
-+libclips_la_LDFLAGS =  -version-info 6:24:0
++libclips_la_LDFLAGS =  -version-info 6:26:0
 +libclips_la_LIBADD =  -lm
 +
 +pkginclude_HEADERS = \
@@ -89,7 +89,7 @@ diff -urN clipssrc/clipssrc/Makefile.am clipssrc/clipssrc--/Makefile.am
 +	userdata.c userfunctions.c utility.c watch.c
 +
 +clips_SOURCES = main.c
-+clips_LDADD = -lclips -lm
++clips_LDADD = libclips.la -lm
 diff -urN clipssrc/clipssrc/NEWS clipssrc/clipssrc--/NEWS
 --- clipssrc/clipssrc/NEWS	Thu Jan  1 01:00:00 1970
 +++ clipssrc/clipssrc--/NEWS	Tue Apr  9 20:37:58 2002
@@ -105,8 +105,8 @@ diff -urN clipssrc/clipssrc/configure.ac clipssrc/clipssrc--/configure.ac
 +++ clipssrc/clipssrc--/configure.ac	Tue Apr  9 20:37:46 2002
 @@ -0,0 +1,27 @@
 +# Process this file with autoconf to produce a configure script.
-+AC_INIT(clips, 6.24)
-+AM_INIT_AUTOMAKE(clips, 6.24)
++AC_INIT(clips, 6.26)
++AM_INIT_AUTOMAKE(clips, 6.26)
 +AC_CONFIG_SRCDIR([agenda.c])
 +AM_CONFIG_HEADER([config.h])
 +
