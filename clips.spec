@@ -67,7 +67,7 @@ Group:		Development/Languages
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Includes for programs using embadded CLIPS enviroment.
+Includes for programs using embadded CLIPS environment.
 
 %description devel -l pl.UTF-8
 Pliki nagłówkowe dla programów używających wbudowanego środowiska CLIPSa.
@@ -79,7 +79,7 @@ Group:		Development/Languages
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Static libraries for programs using embadded CLIPS enviroment.
+Static libraries for programs using embadded CLIPS environment.
 
 %description static -l pl.UTF-8
 Statyczne biblioteki dla programów używających wbudowanego środowiska
