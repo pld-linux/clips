@@ -2,7 +2,7 @@ Summary:	CLIPS - a productive development and delivery expert system tool
 Summary(pl.UTF-8):	CLIPS - narzędzie do tworzenia i wdrażania systemów eksperckich
 Name:		clips
 Version:	6.26
-Release:	3
+Release:	4
 License:	Public Domain
 Group:		Development/Languages
 Source0:	http://www.ghg.net/clips/download/source/clipssrc.tar.Z
@@ -131,6 +131,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING
 %attr(755,root,root) %{_bindir}/clips
 %attr(755,root,root) %{_libdir}/libclips.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libclips.so.6
 %{_datadir}/misc/%{name}.hlp
 
 %files devel
