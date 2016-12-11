@@ -2,7 +2,7 @@ Summary:	CLIPS - a productive development and delivery expert system tool
 Summary(pl.UTF-8):	CLIPS - narzędzie do tworzenia i wdrażania systemów eksperckich
 Name:		clips
 Version:	6.26
-Release:	4
+Release:	5
 License:	Public Domain
 Group:		Development/Languages
 Source0:	http://www.ghg.net/clips/download/source/clipssrc.tar.Z
@@ -53,6 +53,9 @@ Summary:	CLIPS documentation
 Summary(pl.UTF-8):	Dokumentacja do CLIPS
 Group:		Development/Languages
 Requires:	%{name} = %{version}-%{release}
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description doc
 CLIPS documentation and examples.
@@ -89,6 +92,9 @@ CLIPSa.
 %setup -q -T -c -a0 -a9
 %patch0 -p0
 
+cp -p %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} \
+	%{SOURCE6} %{SOURCE7} .
+
 %build
 cd clipssrc/clipssrc/
 rm -f missing
@@ -111,13 +117,8 @@ install -d $RPM_BUILD_ROOT{%{_datadir}/misc,%{_examplesdir}/%{name}-%{version}}
 %{__make} -C clipssrc/clipssrc install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} \
-	%{SOURCE6} %{SOURCE7} .
-
-install %{SOURCE8} $RPM_BUILD_ROOT%{_datadir}/misc/%{name}.hlp
-
+cp -p %{SOURCE8} $RPM_BUILD_ROOT%{_datadir}/misc/%{name}.hlp
 cp -r Examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-
 cp -f clipssrc/readme.txt COPYING
 
 %clean
