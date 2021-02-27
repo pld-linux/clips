@@ -53,9 +53,7 @@ Summary:	CLIPS documentation
 Summary(pl.UTF-8):	Dokumentacja do CLIPS
 Group:		Development/Languages
 Requires:	%{name} = %{version}-%{release}
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description doc
 CLIPS documentation and examples.
