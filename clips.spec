@@ -88,7 +88,7 @@ CLIPSa.
 
 %prep
 %setup -q -T -c -a0 -a9
-%patch0 -p0
+%patch -P0 -p0
 
 cp -p %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} \
 	%{SOURCE6} %{SOURCE7} .
